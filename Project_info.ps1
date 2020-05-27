@@ -1,7 +1,6 @@
-﻿
-#Enter a unique project name
+﻿#Enter a unique project name
 $ProjectName = ""
 #Enter the path to an CSV file that accession, series #, image #
-$AccList = ".csv"
+$AccList = ""
 #Working directory for your PACS downloads
 $ProjectFolder = ""
