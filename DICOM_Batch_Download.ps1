@@ -157,13 +157,33 @@ function New-ProjectFolder($ProjectPath, $ProjectName){
         }
 }
 
+function Clear-ScriptVariables(){
+    Clear-variable -name log,
+                    missedExams, 
+                    missedExamsObject, 
+                    logObject, 
+                    accessions, 
+                    computervariables, 
+                    AccList, 
+                    ProjectPath, 
+                    ProjectName, 
+                    findbin,
+                    movebin, 
+                    dcm2jsonbin,
+                    projectfolder
+}
+
+
+
 If(-not(Test-Path $AccList -PathType leaf)){
+    Clear-ScriptVariables
     Throw "File does not exist, check path"
 }else{
     $accessions = Import-Csv $AccList -Header "Accession"
 }
 
 If($ProjectName -eq $null){
+    Clear-ScriptVariables
     Throw "Missing parameter. Please enter four parameters. 1)Computer Variables 2)Accession List 3)Project Path 4)Project Name"
 }
 
@@ -274,3 +294,4 @@ if($missedExamsObject.length -gt 0){
 }
 
 
+Clear-ScriptVariables
