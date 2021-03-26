@@ -4,6 +4,7 @@ A script that downloads a list of studies from PACS. This version can now run on
 Requirements:
 
 -Powershell 7 or greater (https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-7.1)
+
 -DCMTK 3.6 or greater (https://dicom.offis.de/dcmtk.php.en)
 
 To use this script, call the script followed by the following 4 parameters.
