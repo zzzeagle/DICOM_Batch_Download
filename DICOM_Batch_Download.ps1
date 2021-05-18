@@ -267,15 +267,16 @@ ForEach ($accession in $accessions){
     #Count files downloaded
     $FilesDownloaded = (Get-ChildItem $StudyFolder -Recurse -File | Measure-Object).Count
     $StudyInstances = $StudyInstances.trim()
-
+    
+    #Uncomment if you want to delete incomplete studies
     #If the files downloaded doesn't match the number PACS reported, delete the folder and log the exam to the missing exams log
-    if(($FilesDownloaded -ne $StudyInstances) -or ($StudyStatus -ne "ONLINE")){
-        Remove-Item $StudyFolder -Recurse
-        $missedexam = [PSCustomObject]@{
-            Accession = $accession.Accession
-         }
-         $missedExamsObject += $missedexam
-        }
+    #if(($FilesDownloaded -ne $StudyInstances) -or ($StudyStatus -ne "ONLINE")){
+    #   Remove-Item $StudyFolder -Recurse
+    #    $missedexam = [PSCustomObject]@{
+    #        Accession = $accession.Accession
+    #     }
+    #     $missedExamsObject += $missedexam
+    #    }
 
     #Create log entry
     $studyLog = Write-Log $accession.Accession $StudyStatus $StudyInstances $FilesDownloaded $MoveStatus
