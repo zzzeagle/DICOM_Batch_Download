@@ -1,7 +1,6 @@
 ﻿##############################
 ### PACS Downloader        ###
 ###                        ###
-### Revised: 2021/03/25    ###
 ### Author: Zachary Eagle  ###
 ### Tested with:           ###
 ###   PowerShell 7.1       ###
@@ -262,7 +261,7 @@ ForEach ($accession in $accessions){
                 Remove-Item $series
             }
     }
-    Remove-Item $FindResponseFolder -Recurse
+    Remove-Item $FindResponseFolder -Recurse -Force
 
     #Count files downloaded
     $FilesDownloaded = (Get-ChildItem $StudyFolder -Recurse -File | Measure-Object).Count
