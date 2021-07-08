@@ -283,6 +283,8 @@ ForEach ($accession in $accessions){
     $logObject += $studyLog
     write-host "Study Finish: " -NoNewline
     get-date -Format "HH:mm:ss.fff" | Write-Host
+    $logObject | Export-CSV $log -NoTypeInformation
+
 }
 
 #Save log file
