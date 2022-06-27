@@ -19,3 +19,6 @@ To use this script, call the script followed by the following 4 parameters.
 2. The path to your CSV containing the accession numbers
 3. The project folder path
 4. The project name
+
+Ex:
+PS C:\sample\> .\DICOM_Batch_Download.ps1 .\ComputerVariables.ps1 .\AccessionNumbers.csv .\ SampleDownload
